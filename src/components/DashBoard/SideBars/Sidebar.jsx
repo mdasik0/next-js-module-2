@@ -6,7 +6,7 @@ const Sidebar = () => {
   const navItem = [
     {
       href: "/dashboard",
-      name: "My nono is asik",
+      name: "My nono is kaka asik",
     },
     {
       href: "/dashboard/add-product",
