@@ -1,23 +1,24 @@
+import Navlink from "@/components/shared/Navlink/Navlink";
 import Link from "next/link";
 import React from "react";
 
 const Sidebar = () => {
   const navItem = [
     {
-      route: "/dashboard",
-      routeName: "DashBoard",
+      href: "/dashboard",
+      name: "DashBoard",
     },
     {
-      route: "/dashboard/add-product",
-      routeName: "Add Product",
+      href: "/dashboard/add-product",
+      name: "Add Product",
     },
     {
-      route: "/dashboard/all-products",
-      routeName: "All Products",
+      href: "/dashboard/all-products",
+      name: "All Products",
     },
     {
-      route: "/",
-      routeName: "Home",
+      href: "/",
+      name: "Home",
     },
   ];
   return (
@@ -26,9 +27,9 @@ const Sidebar = () => {
             Learning Next js
         </h4>
       <ul className="flex flex-col gap-5">
-        {navItem.map(({ route, routeName }) => (
-          <li key={route}>
-            <Link href={route}>{routeName}</Link>
+        {navItem.map(({ href, name }) => (
+          <li key={href}>
+            <Navlink activeClassName={`bg-blue-400 text-black`} exact={href === "/" || href === "/dashboard"} href={href}>{name}</Navlink>
           </li>
         ))}
       </ul>
