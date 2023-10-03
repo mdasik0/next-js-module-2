@@ -1,3 +1,4 @@
+import getBlogs from "@/utils/getBlogs";
 import Link from "next/link";
 // import { useRouter } from 'next/navigation';
 import React from "react";
@@ -25,10 +26,7 @@ const BlogsPage = async () => {
   //       date: 2022
   //     }
   //   ];
-  const res = await fetch(`https://jsonplaceholder.typicode.com/posts`,{
-    cache: "force-cache"
-  });
-  const blogs = await res.json();
+  const blogs = await getBlogs()
   return (
     <div className="flex flex-col gap-3 container mx-auto">
       {blogs.map(({ id, title, body }) => (
