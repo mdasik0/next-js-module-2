@@ -1,7 +1,9 @@
 
 const getAllCategories = async () => {
    const res = await fetch(`http://localhost:5000/categories`,{
-    cache: "force-cache"
+    next : {
+        revalidate: 5,
+    }
    })
    return res.json()
 };
